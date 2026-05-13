@@ -1,10 +1,10 @@
 {
-  "tests": 7,
+  "tests": 9,
   "name": "AllTests",
   "testsuites": [
     {
       "name": "GildedRoseTest",
-      "tests": 7,
+      "tests": 9,
       "testsuite": [
         {
           "name": "Foo",
@@ -22,24 +22,34 @@
           "line": 22
         },
         {
+          "name": "Quality",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 30
+        },
+        {
           "name": "AgedBrie",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 31
+          "line": 38
         },
         {
           "name": "AgedBrie2",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 39
+          "line": 46
         },
         {
           "name": "AgedBrie3",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 47
+          "line": 54
+        },
+        {
+          "name": "BackstagePasses",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 62
         },
         {
           "name": "Sulfuras",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 55
+          "line": 71
         }
       ]
     }

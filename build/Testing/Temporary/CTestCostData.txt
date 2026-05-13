@@ -1,8 +1,10 @@
-GildedRoseTest.Foo 3 0.0409635
-GildedRoseTest.Foo2 3 0.0292299
-GildedRoseTest.Foo3 2 0.0289373
-GildedRoseTest.AgedBrie 3 0.0305747
-GildedRoseTest.AgedBrie2 2 0.0270416
-GildedRoseTest.AgedBrie3 3 0.0281428
-GildedRoseTest.Sulfuras 2 0.0284007
+GildedRoseTest.Foo 5 0.0351851
+GildedRoseTest.Foo2 5 0.0335607
+GildedRoseTest.Foo3 4 0.0272784
+GildedRoseTest.AgedBrie 5 0.0299736
+GildedRoseTest.AgedBrie2 4 0.026303
+GildedRoseTest.AgedBrie3 5 0.0270477
+GildedRoseTest.Sulfuras 4 0.0273583
+GildedRoseTest.BackstagePasses 1 0.0286213
+GildedRoseTest.Quality 2 0.0259798
 ---

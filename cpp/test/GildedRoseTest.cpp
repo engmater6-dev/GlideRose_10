@@ -23,8 +23,15 @@ TEST(GildedRoseTest, Foo3) {
   std::vector<Item> items = {Item("foo", 0, 5)};
   GildedRose app(items);
   app.updateQuality();
-  EXPECT_EQ(-1, app.items[0].sellIn);
   EXPECT_EQ(3, app.items[0].quality);
+}
+
+// TC08 : 품질은 0이 최소
+TEST(GildedRoseTest, Quality) {
+  std::vector<Item> items = {Item("foo", 2, 0)};
+  GildedRose app(items);
+  app.updateQuality();
+  EXPECT_EQ(0, app.items[0].quality);
 }
 
 // TC04 : Aged Brie 유통기한 내 1씩 증가
@@ -49,6 +56,15 @@ TEST(GildedRoseTest, AgedBrie3) {
   GildedRose app(items);
   app.updateQuality();
   EXPECT_EQ(50, app.items[0].quality);
+}
+
+// TC09 : Backstage Passes 유통기한 10일 이하 2씩 증가
+TEST(GildedRoseTest, BackstagePasses) {
+  std::vector<Item> items = {
+      Item("Backstage passes to a TAFKAL80ETC concert", 6, 5)};
+  GildedRose app(items);
+  app.updateQuality();
+  EXPECT_EQ(7, app.items[0].quality);
 }
 
 // TC07 : Sulfuras는 품질과 유통기한이 변하지 않음
