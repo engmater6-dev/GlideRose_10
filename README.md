@@ -71,9 +71,9 @@ AgedBrie
 
 Backstage Pass
 - 10이하 -> +2
-  : ("Backstage Pass", 6, 5) -> ("Backstage Pass", 5, 7)
+  : ("Backstage passes to a TAFKAL80ETC concert", 6, 5) -> (7) 완료
 
 
 Sulfuras
 - No change
-  : ("Sulfuras", 5, 5) -> ("Sulfuras", 4, 5)
+  : ("Sulfuras", 1, 5) -> (1, 5) 완료
