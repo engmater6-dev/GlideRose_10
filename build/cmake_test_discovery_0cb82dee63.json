@@ -1,15 +1,15 @@
 {
-  "tests": 6,
+  "tests": 7,
   "name": "AllTests",
   "testsuites": [
     {
       "name": "GildedRoseTest",
-      "tests": 6,
+      "tests": 7,
       "testsuite": [
         {
           "name": "Foo",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 4
+          "line": 5
         },
         {
           "name": "Foo2",
@@ -29,12 +29,17 @@
         {
           "name": "AgedBrie2",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 40
+          "line": 39
         },
         {
           "name": "AgedBrie3",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
-          "line": 49
+          "line": 47
+        },
+        {
+          "name": "Sulfuras",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 55
         }
       ]
     }

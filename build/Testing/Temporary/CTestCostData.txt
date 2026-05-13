@@ -1,7 +1,8 @@
-GildedRoseTest.Foo 2 0.0489044
-GildedRoseTest.Foo2 2 0.0307918
-GildedRoseTest.Foo3 1 0.0319997
-GildedRoseTest.AgedBrie 2 0.032423
-GildedRoseTest.AgedBrie2 1 0.0288751
-GildedRoseTest.AgedBrie3 1 0.0331184
+GildedRoseTest.Foo 3 0.0409635
+GildedRoseTest.Foo2 3 0.0292299
+GildedRoseTest.Foo3 2 0.0289373
+GildedRoseTest.AgedBrie 3 0.0305747
+GildedRoseTest.AgedBrie2 2 0.0270416
+GildedRoseTest.AgedBrie3 3 0.0281428
+GildedRoseTest.Sulfuras 2 0.0284007
 ---
