@@ -1,0 +1,42 @@
+{
+  "tests": 6,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "GildedRoseTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "Foo",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 4
+        },
+        {
+          "name": "Foo2",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 13
+        },
+        {
+          "name": "Foo3",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 22
+        },
+        {
+          "name": "AgedBrie",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 31
+        },
+        {
+          "name": "AgedBrie2",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 40
+        },
+        {
+          "name": "AgedBrie3",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 49
+        }
+      ]
+    }
+  ]
+}

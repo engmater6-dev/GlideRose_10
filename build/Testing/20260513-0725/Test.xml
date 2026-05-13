@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20260513-0725-Experimental"
+	Name="(empty)"
+	Generator="ctest-4.3.2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="BOOK-NPHD9Q0AQ6"
+	OSRelease="10.0.26200"
+	OSVersion="Windows 10"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="0"
+	ModelName="Virtual CPU @ 3.24GHz"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="8"
+	NumberOfPhysicalCPU="8"
+	TotalVirtualMemory="5410"
+	TotalPhysicalMemory="15973"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="3244.000000"
+	>
+	<Testing>
+		<StartDateTime>May 13 17:03 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</StartDateTime>
+		<StartTestTime>1778659401</StartTestTime>
+		<TestList>
+			<Test>./GildedRoseTest.AgedBrie3</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>GildedRoseTest.AgedBrie3</Name>
+			<Path>.</Path>
+			<FullName>./GildedRoseTest.AgedBrie3</FullName>
+			<FullCommandLine>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.AgedBrie3" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<StartTestTime>1778659401.520551</StartTestTime>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.033118</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.AgedBrie3" "--gtest_also_run_disabled_tests"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNkMFuwjAMhu95Ch/poRFoNyQObKAeJgEq2y5NVYXGVJHSBCXu9vprWoTopCF8suMvv38776zVtoFWajtL4OxdC29Lsdl+icxohbkLWC3m4tRpo0Sl8BJE41xjkDBQGnx9V4qhjFkV9Xhds50jXEI2IPDRd+CsDaGHFWS9Iqo4IL7zdYPq1Wt8YcXqFiXkV4MLoOF3NHjNQ6cJOSvSW5SQGXeSZuyj/dbe2RZtzyKl3eUPfK85dcMKyD93MET5wOlIwP79AQWzObQheXb0iAM5kiZhz21HKH2q3I+d3u6/m4GXlk/n9Jsc1sfjdhP3HVnOfgEsDa2z====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 13 17:03 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</EndDateTime>
+		<EndTestTime>1778659401</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

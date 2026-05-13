@@ -1,0 +1,7 @@
+GildedRoseTest.Foo 2 0.0489044
+GildedRoseTest.Foo2 2 0.0307918
+GildedRoseTest.Foo3 1 0.0319997
+GildedRoseTest.AgedBrie 2 0.032423
+GildedRoseTest.AgedBrie2 1 0.0288751
+GildedRoseTest.AgedBrie3 1 0.0331184
+---

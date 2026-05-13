@@ -1,0 +1,30 @@
+Start testing: May 13 17:03 대한민국 표준시
+----------------------------------------------------------
+6/6 Testing: GildedRoseTest.AgedBrie3
+6/6 Test: GildedRoseTest.AgedBrie3
+Command: "C:/DEV/GlideRose_10/build/gilded_rose_test.exe" "--gtest_filter=GildedRoseTest.AgedBrie3" "--gtest_also_run_disabled_tests"
+Directory: C:/DEV/GlideRose_10/build
+"GildedRoseTest.AgedBrie3" start time: May 13 17:03 대한민국 표준시
+Output:
+----------------------------------------------------------
+Running main() from C:\DEV\GlideRose_10\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = GildedRoseTest.AgedBrie3
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GildedRoseTest
+[ RUN      ] GildedRoseTest.AgedBrie3
+[       OK ] GildedRoseTest.AgedBrie3 (0 ms)
+[----------] 1 test from GildedRoseTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"GildedRoseTest.AgedBrie3" end time: May 13 17:03 대한민국 표준시
+"GildedRoseTest.AgedBrie3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 13 17:03 대한민국 표준시

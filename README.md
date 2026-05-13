@@ -50,3 +50,33 @@ ctest --test-dir build
 
 
 ### To-Do list
+noname
+- 아이템 퀄리티 품질 하한 0이상 : 완료
+   : ("foo", 0, 0) -> ("foo", -1, 0)
+- 아이템 퀄리티 -1 동작 : 완료
+   : ("foo", 2, 5) -> ("foo", 1, 4)
+- 유통기한 over시 퀄리티 -2 동작 : 완료
+   : ("foo", 0, 5) -> ("foo", -1, 3)
+
+
+AgedBrie
+- 퀄리티 1 증가
+  : ("AgedBrie", 2, 5) -> ("AgedBrie", 1, 6)
+- 유통기한 over시 +2
+  : ("AgedBrie", 0, 5) -> ("AgedBrie", -1, 7)
+- 퀄리티 max 50
+  : ("AgedBrie", 2, 50) -> ("AgedBrie", 1, 50)
+
+Backstage Pass
+- 유통기한 11이상 -> +1
+  : ("Backstage Pass", 12, 5) -> ("Backstage Pass", 11, 6)
+- 10이하 -> +2
+  : ("Backstage Pass", 6, 5) -> ("Backstage Pass", 5, 7)
+- 5 이하 -> +3
+  : ("Backstage Pass", 3, 5) -> ("Backstage Pass", 2, 8)
+- 0 -> 0
+  : ("Backstage Pass", 0, 5) -> ("Backstage Pass", -1, 0)
+
+Sulfuras
+- No change
+  : ("Sulfuras", 5, 5) -> ("Sulfuras", 4, 5)
