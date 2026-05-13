@@ -77,3 +77,45 @@ Backstage Pass
 Sulfuras
 - No change
   : ("Sulfuras", 1, 5) -> (1, 5) 완료
+
+
+#### 제미나이 정리
+  일반 아이템
+
+이름 불변
+
+sellIn 하루마다 -1
+
+quality 하루마다 -1
+
+유통기한 지난 경우 quality -2
+
+quality는 최소 0
+
+quality는 최대 50
+
+Aged Brie
+
+하루마다 +1
+
+유통기한 지난 경우 +2
+
+sellIn 감소 확인
+
+quality 최대 50
+
+Backstage Pass
+
+11일 이상일 때 +1
+
+10일 이하일 때 +2
+
+5일 이하일 때 +3
+
+콘서트 날 지나면 quality = 0
+
+quality 최대 50
+
+Sulfuras
+
+sellIn, quality 모두 변화 없음

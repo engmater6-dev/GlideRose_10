@@ -1,55 +1,65 @@
 {
-  "tests": 9,
+  "tests": 11,
   "name": "AllTests",
   "testsuites": [
     {
       "name": "GildedRoseTest",
-      "tests": 9,
+      "tests": 11,
       "testsuite": [
         {
-          "name": "Foo",
+          "name": "NormalItem",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 5
         },
         {
-          "name": "Foo2",
+          "name": "QualityDecreaseInSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 13
         },
         {
-          "name": "Foo3",
+          "name": "QualityDecreaseAfterSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 22
         },
         {
-          "name": "Quality",
+          "name": "QualityLowerBound",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 30
         },
         {
-          "name": "AgedBrie",
+          "name": "AgedBrieQualityIncreaseInSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 38
         },
         {
-          "name": "AgedBrie2",
+          "name": "AgedBrieQualityIncreaseAfterSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 46
         },
         {
-          "name": "AgedBrie3",
+          "name": "AgedBrieQualityUpperBound",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 54
         },
         {
-          "name": "BackstagePasses",
+          "name": "BackstagePassesIncreaseInSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 62
         },
         {
-          "name": "Sulfuras",
+          "name": "BackstagePassesIncreaseMoreInSellIn",
           "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
           "line": 71
+        },
+        {
+          "name": "BackstagePassesQualityDropAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 80
+        },
+        {
+          "name": "SulfurasNoChangeQualityAndSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 89
         }
       ]
     }

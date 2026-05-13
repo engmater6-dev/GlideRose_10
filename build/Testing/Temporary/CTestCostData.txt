@@ -7,4 +7,15 @@ GildedRoseTest.AgedBrie3 5 0.0270477
 GildedRoseTest.Sulfuras 4 0.0273583
 GildedRoseTest.BackstagePasses 1 0.0286213
 GildedRoseTest.Quality 2 0.0259798
+GildedRoseTest.AgedBrieQualityIncreaseAfterSellIn 1 0.026705
+GildedRoseTest.AgedBrieQualityIncreaseInSellIn 1 0.0248271
+GildedRoseTest.AgedBrieQualityUpperBound 1 0.024224
+GildedRoseTest.BackstagePassesIncreaseInSellIn 1 0.0238083
+GildedRoseTest.BackstagePassesIncreaseMoreInSellIn 1 0.0590207
+GildedRoseTest.BackstagePassesQualityDropAfterSellIn 1 0.024204
+GildedRoseTest.NormalItem 1 0.0255242
+GildedRoseTest.QualityDecreaseAfterSellIn 1 0.0245549
+GildedRoseTest.QualityDecreaseInSellIn 1 0.0244134
+GildedRoseTest.QualityLowerBound 1 0.0244285
+GildedRoseTest.SulfurasNoChangeQualityAndSellIn 1 0.024172
 ---

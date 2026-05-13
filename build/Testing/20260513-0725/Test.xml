@@ -25,20 +25,20 @@
 	ProcessorClockFrequency="3244.000000"
 	>
 	<Testing>
-		<StartDateTime>May 14 08:10 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</StartDateTime>
-		<StartTestTime>1778713824</StartTestTime>
+		<StartDateTime>May 14 08:33 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</StartDateTime>
+		<StartTestTime>1778715224</StartTestTime>
 		<TestList>
-			<Test>./GildedRoseTest.BackstagePasses</Test>
+			<Test>./GildedRoseTest.SulfurasNoChangeQualityAndSellIn</Test>
 		</TestList>
 		<Test Status="passed">
-			<Name>GildedRoseTest.BackstagePasses</Name>
+			<Name>GildedRoseTest.SulfurasNoChangeQualityAndSellIn</Name>
 			<Path>.</Path>
-			<FullName>./GildedRoseTest.BackstagePasses</FullName>
-			<FullCommandLine>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.BackstagePasses" "--gtest_also_run_disabled_tests"</FullCommandLine>
-			<StartTestTime>1778713824.076801</StartTestTime>
+			<FullName>./GildedRoseTest.SulfurasNoChangeQualityAndSellIn</FullName>
+			<FullCommandLine>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.SulfurasNoChangeQualityAndSellIn" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<StartTestTime>1778715224.168748</StartTestTime>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.028621</Value>
+					<Value>0.024172</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -47,18 +47,18 @@
 					<Value>Completed</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Command Line">
-					<Value>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.BackstagePasses" "--gtest_also_run_disabled_tests"</Value>
+					<Value>C:\DEV\GlideRose_10\build\gilded_rose_test.exe "--gtest_filter=GildedRoseTest.SulfurasNoChangeQualityAndSellIn" "--gtest_also_run_disabled_tests"</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="text/string" name="Environment">
 					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
 				</NamedMeasurement>
 				<Measurement>
-					<Value encoding="base64" compression="gzip">eJyNkE1rwzAMhu/+FTomh4Rmx0IP21pyKHQl3XaJQ3BjNZg5drGV7e8vTkpJB6PVSR8Pr16p6I1RpoVOKBPFcHK2g9clX28+ea6VxMJ6rLMFP/ZKS15LPHveWttqJPSUeNfMSj6WIauDXto0bGcJl5CPCLwPEzgpTehgBfmgiDIsCP30RTRfnkSLe+E9elaurlFBcbGZAY0aweYl970iTFmZXKOCXNuj0NMczbdy1nRoBhYp6c9/4LnmrSdWQvGxgzGqu34nDt62d1mIFtD5+FEbEGUDDmRJ6Jg9dimhcIm0P+b2j//9D5wwKURPsz3DPfvnw2GzDrdPbMp+Ado2tiA=</Value>
+					<Value encoding="base64" compression="gzip">eJyVUE1rwkAQve+vmKM5JOhV8CAqoRRSTdpesiGs2Um6sNmV/Wjpv282EVGhoHOajzdv3rzcKyVUBz0TahZBa3QPmyXd7j5pKgXHXFusF3N69EJyWnM8Wdpp3Ul0aF1sTXNV0rEMWR34kqYhmXa4hHSEwPswgVZIhwZWkA6MyMOB0E8KL1tvmM305oupDg+eSeF+14oXKOWLIuXqEhXkZ90LcCNp0H3OrRcOE1LGl6gglfrI5DRH9S2MVj2qAYsu9qc78DXnrUhSQv6RwRjV8w9Mi/D2+vwyzObQ2+hRoRMcnHZMRuQxLxwyE3P9c+f0fw6DYSq5vTM8uF8XxW4b3JmwCfkD51TKEg==</Value>
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>May 14 08:10 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</EndDateTime>
-		<EndTestTime>1778713824</EndTestTime>
+		<EndDateTime>May 14 08:33 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</EndDateTime>
+		<EndTestTime>1778715224</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>
