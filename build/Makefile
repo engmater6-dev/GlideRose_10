@@ -96,7 +96,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\" \"gmock\" \"gtest\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -184,17 +184,17 @@ gilded_rose/fast:
 .PHONY : gilded_rose/fast
 
 #=============================================================================
-# Target rules for targets named gilded_rose_test
+# Target rules for targets named gilded_rose_approval_test
 
 # Build rule for target.
-gilded_rose_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gilded_rose_test
-.PHONY : gilded_rose_test
+gilded_rose_approval_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gilded_rose_approval_test
+.PHONY : gilded_rose_approval_test
 
 # fast build rule for target.
-gilded_rose_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_test.dir\build.make CMakeFiles/gilded_rose_test.dir/build
-.PHONY : gilded_rose_test/fast
+gilded_rose_approval_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_approval_test.dir\build.make CMakeFiles/gilded_rose_approval_test.dir/build
+.PHONY : gilded_rose_approval_test/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -248,6 +248,19 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+#=============================================================================
+# Target rules for targets named ApprovalTests
+
+# Build rule for target.
+ApprovalTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ApprovalTests
+.PHONY : ApprovalTests
+
+# fast build rule for target.
+ApprovalTests/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\approvaltests-build\ApprovalTests\CMakeFiles\ApprovalTests.dir\build.make _deps/approvaltests-build/ApprovalTests/CMakeFiles/ApprovalTests.dir/build
+.PHONY : ApprovalTests/fast
+
 src/GildedRose.obj: src/GildedRose.cpp.obj
 .PHONY : src/GildedRose.obj
 
@@ -272,29 +285,29 @@ src/GildedRose.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose.dir\build.make CMakeFiles/gilded_rose.dir/src/GildedRose.cpp.s
 .PHONY : src/GildedRose.cpp.s
 
-test/GildedRoseTest.obj: test/GildedRoseTest.cpp.obj
-.PHONY : test/GildedRoseTest.obj
+test/ApprovalTests.obj: test/ApprovalTests.cpp.obj
+.PHONY : test/ApprovalTests.obj
 
 # target to build an object file
-test/GildedRoseTest.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_test.dir\build.make CMakeFiles/gilded_rose_test.dir/test/GildedRoseTest.cpp.obj
-.PHONY : test/GildedRoseTest.cpp.obj
+test/ApprovalTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_approval_test.dir\build.make CMakeFiles/gilded_rose_approval_test.dir/test/ApprovalTests.cpp.obj
+.PHONY : test/ApprovalTests.cpp.obj
 
-test/GildedRoseTest.i: test/GildedRoseTest.cpp.i
-.PHONY : test/GildedRoseTest.i
+test/ApprovalTests.i: test/ApprovalTests.cpp.i
+.PHONY : test/ApprovalTests.i
 
 # target to preprocess a source file
-test/GildedRoseTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_test.dir\build.make CMakeFiles/gilded_rose_test.dir/test/GildedRoseTest.cpp.i
-.PHONY : test/GildedRoseTest.cpp.i
+test/ApprovalTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_approval_test.dir\build.make CMakeFiles/gilded_rose_approval_test.dir/test/ApprovalTests.cpp.i
+.PHONY : test/ApprovalTests.cpp.i
 
-test/GildedRoseTest.s: test/GildedRoseTest.cpp.s
-.PHONY : test/GildedRoseTest.s
+test/ApprovalTests.s: test/ApprovalTests.cpp.s
+.PHONY : test/ApprovalTests.s
 
 # target to generate assembly for a file
-test/GildedRoseTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_test.dir\build.make CMakeFiles/gilded_rose_test.dir/test/GildedRoseTest.cpp.s
-.PHONY : test/GildedRoseTest.cpp.s
+test/ApprovalTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\gilded_rose_approval_test.dir\build.make CMakeFiles/gilded_rose_approval_test.dir/test/ApprovalTests.cpp.s
+.PHONY : test/ApprovalTests.cpp.s
 
 # Help Target
 help:
@@ -309,8 +322,9 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... test
+	@echo ... ApprovalTests
 	@echo ... gilded_rose
-	@echo ... gilded_rose_test
+	@echo ... gilded_rose_approval_test
 	@echo ... gmock
 	@echo ... gmock_main
 	@echo ... gtest
@@ -318,9 +332,9 @@ help:
 	@echo ... src/GildedRose.obj
 	@echo ... src/GildedRose.i
 	@echo ... src/GildedRose.s
-	@echo ... test/GildedRoseTest.obj
-	@echo ... test/GildedRoseTest.i
-	@echo ... test/GildedRoseTest.s
+	@echo ... test/ApprovalTests.obj
+	@echo ... test/ApprovalTests.i
+	@echo ... test/ApprovalTests.s
 .PHONY : help
 
 

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/DEV/GlideRose_10/cpp/test/ApprovalTests.cpp" "CMakeFiles/gilded_rose_test.dir/test/ApprovalTests.cpp.obj" "gcc" "CMakeFiles/gilded_rose_test.dir/test/ApprovalTests.cpp.obj.d"
   "C:/DEV/GlideRose_10/cpp/test/GildedRoseTest.cpp" "CMakeFiles/gilded_rose_test.dir/test/GildedRoseTest.cpp.obj" "gcc" "CMakeFiles/gilded_rose_test.dir/test/GildedRoseTest.cpp.obj.d"
   )
 

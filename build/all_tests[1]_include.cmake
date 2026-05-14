@@ -1,0 +1,5 @@
+if(EXISTS "C:/DEV/GlideRose_10/build/all_tests[1]_tests.cmake")
+  include("C:/DEV/GlideRose_10/build/all_tests[1]_tests.cmake")
+else()
+  add_test(all_tests_NOT_BUILT all_tests_NOT_BUILT)
+endif()

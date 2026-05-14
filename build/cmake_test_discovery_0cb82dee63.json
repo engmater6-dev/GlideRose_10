@@ -1,7 +1,43 @@
 {
-  "tests": 11,
+  "tests": 17,
   "name": "AllTests",
   "testsuites": [
+    {
+      "name": "GildedRoseApprovalTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "NormalItem",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 10
+        },
+        {
+          "name": "QualityDecreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 21
+        },
+        {
+          "name": "QualityDecreaseAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 31
+        },
+        {
+          "name": "AgedBrieQualityIncreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 41
+        },
+        {
+          "name": "BackstagePassesIncreaseMoreInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 51
+        },
+        {
+          "name": "SulfurasNoChangeQualityAndSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 62
+        }
+      ]
+    },
     {
       "name": "GildedRoseTest",
       "tests": 11,
