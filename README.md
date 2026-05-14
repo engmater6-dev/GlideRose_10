@@ -47,3 +47,75 @@ ctest --test-dir build
 - unit test 내용 : 문서상에 나타난 동작들 확인
 
 ### unit test VS golden-master test 비교
+
+
+### To-Do list
+noname
+- item 이름 변경 없음...초기...
+  : ("foo", 0, 0) -> "foo" 검증
+- 유통기한 1감소.. + 퀄리티 1감소
+  : ("foo", 2, 5) -> (1, 4) 검증 완료
+- 유통기한 over시 퀄리티 2감소
+  : ("foo", 0, 5) -> (3) 검증 완료
+- 품질은 0이 최소
+  : ("foo", 2, 0) -> (0) 검증 완료
+
+
+AgedBrie
+- 퀄리티 1 증가
+  : ("AgedBrie", 2, 5) -> (6) 검증 완료
+- 유통기한 over시 +2
+  : ("AgedBrie", 0, 5) -> (7) 검증 완료
+- 퀄리티 max 50
+  : ("AgedBrie", 2, 50) -> (50) 검증 완료
+
+Backstage Pass
+- 10이하 -> +2
+  : ("Backstage passes to a TAFKAL80ETC concert", 6, 5) -> (7) 완료
+
+
+Sulfuras
+- No change
+  : ("Sulfuras", 1, 5) -> (1, 5) 완료
+
+
+#### 제미나이 정리
+  일반 아이템
+
+이름 불변
+
+sellIn 하루마다 -1
+
+quality 하루마다 -1
+
+유통기한 지난 경우 quality -2
+
+quality는 최소 0
+
+quality는 최대 50
+
+Aged Brie
+
+하루마다 +1
+
+유통기한 지난 경우 +2
+
+sellIn 감소 확인
+
+quality 최대 50
+
+Backstage Pass
+
+11일 이상일 때 +1
+
+10일 이하일 때 +2
+
+5일 이하일 때 +3
+
+콘서트 날 지나면 quality = 0
+
+quality 최대 50
+
+Sulfuras
+
+sellIn, quality 모두 변화 없음

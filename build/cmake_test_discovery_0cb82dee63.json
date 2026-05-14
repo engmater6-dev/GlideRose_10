@@ -1,0 +1,103 @@
+{
+  "tests": 17,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "GildedRoseApprovalTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "NormalItem",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 10
+        },
+        {
+          "name": "QualityDecreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 21
+        },
+        {
+          "name": "QualityDecreaseAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 31
+        },
+        {
+          "name": "AgedBrieQualityIncreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 41
+        },
+        {
+          "name": "BackstagePassesIncreaseMoreInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 51
+        },
+        {
+          "name": "SulfurasNoChangeQualityAndSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "name": "GildedRoseTest",
+      "tests": 11,
+      "testsuite": [
+        {
+          "name": "NormalItem",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 5
+        },
+        {
+          "name": "QualityDecreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 13
+        },
+        {
+          "name": "QualityDecreaseAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 22
+        },
+        {
+          "name": "QualityLowerBound",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 30
+        },
+        {
+          "name": "AgedBrieQualityIncreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 38
+        },
+        {
+          "name": "AgedBrieQualityIncreaseAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 46
+        },
+        {
+          "name": "AgedBrieQualityUpperBound",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 54
+        },
+        {
+          "name": "BackstagePassesIncreaseInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 62
+        },
+        {
+          "name": "BackstagePassesIncreaseMoreInSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 71
+        },
+        {
+          "name": "BackstagePassesQualityDropAfterSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 80
+        },
+        {
+          "name": "SulfurasNoChangeQualityAndSellIn",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\GildedRoseTest.cpp",
+          "line": 89
+        }
+      ]
+    }
+  ]
+}
