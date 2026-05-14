@@ -164,6 +164,9 @@ def increase_quality(item, amount=1):
 def decrease_quality(item, amount=1):
     	item.quality = max(QUALITY_MIN, item.quality - amount)
 
+def decrease_sellin(item):
+	    item.sellin -= 1
+
 3단계 추상 클라스 작성
 
 from abc import ABC, abstractmethod
@@ -188,12 +191,12 @@ class ItemUpdate(ABC):
 class AgedBrie(ItemUpdate):
 	def update_quality(self):
 		amount = 1 if self.item.sellin > 0 else 2
-		decrease_quality(self.item, amount)
+		increase_quality(self.item, amount)
 
 	def decrease_sellin(self):
-		self.item.sellin -= 1
+		decrease_sellin(self.item)
 
-class BackstagePass(ItemUpdate):
+class BackStage(ItemUpdate):
 	def update_quality(self):
 		if self.item.sellin >= 11:
 			amount = 1
@@ -208,7 +211,7 @@ class BackstagePass(ItemUpdate):
 			self.item.quality = QUALITY_MIN
 
 	def decrease_sellin(self):
-		self.item.sellin -= 1
+		decrease_sellin(self.item)
 
 class Sulfuras(ItemUpdate):
 	def update_quality(self):
@@ -227,4 +230,24 @@ def update_quality(items):
 		elif item.name == SULFURAS:
 			item_update = Sulfuras(item)
 		item_update.update()
-    
+
+
+4단계 GildedRoseItem 추상클래스
+## update_quality 수정
+
+Class GildedRoseItem:
+	def __init__(self, item):
+		self.item = item
+
+	def update_quality(self):
+		for item in self.items:
+			if item.name == AGED_BRIE:
+				item_update = AgedBrie(item)
+			elif item.name == BACKSTAGE:
+				item_update = BackStage(item)
+			elif item.name == SULFURAS:
+				item_update = Sulfuras(item)
+			item_update.update()
+
+5단계 : item 추가
+## 자식 class 추가
