@@ -25,5 +25,5 @@ GildedRoseApprovalTest.QualityDecreaseAfterSellIn 0 0
 GildedRoseApprovalTest.AgedBrieQualityIncreaseInSellIn 0 0
 GildedRoseApprovalTest.BackstagePassesIncreaseMoreInSellIn 0 0
 GildedRoseApprovalTest.SulfurasNoChangeQualityAndSellIn 0 0
-GildedRoseApprovalTest.AllCasesTogether 1 0.0289675
+GildedRoseApprovalTest.AllCasesTogether 2 0.0285228
 ---
