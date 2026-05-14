@@ -339,6 +339,7 @@ class GildedRoseItem(Define):
 			item_update = classItem(item)
 			item_update.update()
 
-전역 함수도 Define class로 이동 중....
+## Define를 활용 다른 class도 변경
+## 전역함수도 Define으로 이동???
 
 ```
