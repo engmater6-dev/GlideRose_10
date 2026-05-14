@@ -153,8 +153,8 @@ AGED_BRIE   = "Aged Brie"
 BACKSTAGE   = "Backstage passes to a TAFKAL80ETC concert"
 SULFURAS    = "Sulfuras, Hand of Ragnaros"
 CONJURED    = "Conjured"
-FOOD       = "Food"
-BEVERAGE    = "Beverage"
+FOOD_BEVERAGE       = "Food & Beverage"
+
 
 2단계 함수 추출
 # 함수 추출
@@ -188,6 +188,14 @@ class ItemUpdate(ABC):
 		pass
 
 ## 자식 class
+class Normal(ItemUpdate):
+  def update_quality(self):
+  amount = 1 if self.item.sellin > 0 else 2
+    decrease_quality(self.item, amount)
+  
+  def decrease_sellin(self):
+    decrease_sellin(self.item)
+
 class AgedBrie(ItemUpdate):
 	def update_quality(self):
 		amount = 1 if self.item.sellin > 0 else 2
@@ -229,15 +237,17 @@ def update_quality(items):
 			item_update = BackStage(item)
 		elif item.name == SULFURAS:
 			item_update = Sulfuras(item)
+    else:
+      item_update = Normal(item)
 		item_update.update()
 
 
 4단계 GildedRoseItem 추상클래스
 ## update_quality 수정
 
-Class GildedRoseItem:
-	def __init__(self, item):
-		self.item = item
+class GildedRoseItem:
+	def __init__(self, items):
+		self.items = items
 
 	def update_quality(self):
 		for item in self.items:
@@ -247,7 +257,26 @@ Class GildedRoseItem:
 				item_update = BackStage(item)
 			elif item.name == SULFURAS:
 				item_update = Sulfuras(item)
+      elif item.name == CONJURED:
+        item_update = Conjured(item)
+      elif item.name == FOOD_BEVERAGE:
+        item_update = FoodBeverage(item)
+      else:
+        item_update = Normal(item)
 			item_update.update()
 
 5단계 : item 추가
 ## 자식 class 추가
+class Conjured(ItemUpdate):
+  def update_quality(self):
+		decrease_quality(self.item, amount=2)
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
+
+class FoodBeverage(ItemUpdate):
+  def update_quality(self):
+		decrease_quality(self.item)
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
