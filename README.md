@@ -142,6 +142,7 @@ sellIn, quality 모두 변화 없음
 
 
 #### 파이썬으로 우선 작성..
+```python
 1단계 상수 추출
 # 상수 의미 부여
 QUALITY_MIN = 0
@@ -190,7 +191,7 @@ class ItemUpdate(ABC):
 ## 자식 class
 class Normal(ItemUpdate):
   def update_quality(self):
-  amount = 1 if self.item.sellin > 0 else 2
+  	amount = 1 if self.item.sellin > 0 else 2
     decrease_quality(self.item, amount)
   
   def decrease_sellin(self):
@@ -237,8 +238,8 @@ def update_quality(items):
 			item_update = BackStage(item)
 		elif item.name == SULFURAS:
 			item_update = Sulfuras(item)
-    else:
-      item_update = Normal(item)
+    	else:
+      		item_update = Normal(item)
 		item_update.update()
 
 
@@ -280,3 +281,64 @@ class FoodBeverage(ItemUpdate):
 
 	def decrease_sellin(self):
 		decrease_sellin(self.item)
+```
+
+###GildedRoseItem Class if문 dict으로 변경
+```python
+
+dict_item_class = { 
+		AGED_BRIE: AgedBrie,
+		BACKSTAGE: BackStage,
+		SULFURAS: Sulfuras,
+		CONJURED: Conjured,
+		FOOD_BEVERAGE: FoodBeverage,
+			}
+
+
+class GildedRoseItem:
+	
+	def __init__(self, items):
+		self.items = items
+	
+	def update_quality(self):
+		for item in self.items:
+			classItem = dict_item_class.get(item.name, Normal)
+			item_update = classItem(item)
+			item_update.update()
+
+```
+
+### 상수 및 기본설정 class로 전환
+``` python
+class Define:
+	QUALITY_MIN = 0
+	QUALITY_MAX = 50
+
+	AGED_BRIE   = "Aged Brie"
+	BACKSTAGE   = "Backstage passes to a TAFKAL80ETC concert"
+	SULFURAS    = "Sulfuras, Hand of Ragnaros"
+	CONJURED    = "Conjured"
+	FOOD_BEVERAGE       = "Food & Beverage"
+
+	dict_item_class = { 
+		AGED_BRIE: AgedBrie,
+		BACKSTAGE: BackStage,
+		SULFURAS: Sulfuras,
+		CONJURED: Conjured,
+		FOOD_BEVERAGE: FoodBeverage,
+			}
+
+class GildedRoseItem(Define):
+	
+	def __init__(self, items):
+		self.items = items
+	
+	def update_quality(self):
+		for item in self.items:
+			classItem = self.dict_item_class.get(item.name, Normal)
+			item_update = classItem(item)
+			item_update.update()
+
+전역 함수도 Define class로 이동 중....
+
+```
