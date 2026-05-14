@@ -79,7 +79,7 @@ Sulfuras
   : ("Sulfuras", 1, 5) -> (1, 5) 완료
 
 
-#### 제미나이 정리
+#### AI 정리
   일반 아이템
 
 이름 불변
@@ -119,3 +119,112 @@ quality 최대 50
 Sulfuras
 
 sellIn, quality 모두 변화 없음
+
+##### 문제점..
+ - 숫자의 의미 quality 50, sellin 0
+ - 중첩 if 과다 -> class로 분리
+ - 중복 로직 : items[i].quality + 1, items[i].sellIn - 1 -> 함수화
+ - updateQuality() 모든 규칙 처리
+
+##### Refactoring To-Do list
+ - 상수로 정의 : 오타방지 및 의미 확인
+ 
+ - quality 증감 추출
+
+ - class로 중첩 if문 구현
+   -> Template Method 적용???
+  추상 class 설정
+    .updateSellin 함수와 updateQuality는 pass로 정의하고
+    .자식 class에서 조건별 설정...
+
+  item 이름으로 class 지정하고...
+   -> 초기값 update -> sellin -1 실행 -> 조건에 맞추어 quality update 진행
+
+
+#### 파이썬으로 우선 작성..
+1단계 상수 추출
+# 상수 의미 부여
+QUALITY_MIN = 0
+QUALITY_MAX = 50
+
+# Item 상수화
+
+AGED_BRIE   = "Aged Brie"
+BACKSTAGE   = "Backstage passes to a TAFKAL80ETC concert"
+SULFURAS    = "Sulfuras, Hand of Ragnaros"
+CONJURED    = "Conjured"
+FOOD       = "Food"
+BEVERAGE    = "Beverage"
+
+2단계 함수 추출
+# 함수 추출
+def increase_quality(item, amount=1):
+   	 item.quality = min(QUALITY_MAX, item.quality + amount)
+
+def decrease_quality(item, amount=1):
+    	item.quality = max(QUALITY_MIN, item.quality - amount)
+
+3단계 추상 클라스 작성
+
+from abc import ABC, abstractmethod
+# 부모 class
+class ItemUpdate(ABC):
+    	def __init__(self, item):
+        	self.item = item
+
+	def update(self):
+		self.update_quality()
+		self.decrease_sellin()
+	
+	@abstractmethod
+	def update_quality(self):
+		pass
+
+	@abstractmethod
+	def decrease_sellin(self):
+		pass
+
+## 자식 class
+class AgedBrie(ItemUpdate):
+	def update_quality(self):
+		amount = 1 if self.item.sellin > 0 else 2
+		decrease_quality(self.item, amount)
+
+	def decrease_sellin(self):
+		self.item.sellin -= 1
+
+class BackstagePass(ItemUpdate):
+	def update_quality(self):
+		if self.item.sellin >= 11:
+			amount = 1
+		elif self.item.sellin > 5:
+			amount = 2
+		else:
+			amount = 3
+		increase_quality(self.item, amount)
+
+		### sellin이 over시 0 조건 추가
+		if self.item.sellin < 0:
+			self.item.quality = QUALITY_MIN
+
+	def decrease_sellin(self):
+		self.item.sellin -= 1
+
+class Sulfuras(ItemUpdate):
+	def update_quality(self):
+		pass
+
+	def decrease_sellin(self):
+		pass
+
+## update_quality 단순화..
+def update_quality(items):
+	for item in items:
+		if item.name == AGED_BRIE:
+			item_update = AgedBrie(item)
+		elif item.name == BACKSTAGE:
+			item_update = BackStage(item)
+		elif item.name == SULFURAS:
+			item_update = Sulfuras(item)
+		item_update.update()
+    
