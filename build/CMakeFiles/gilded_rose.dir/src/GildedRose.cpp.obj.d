@@ -105,4 +105,12 @@ CMakeFiles/gilded_rose.dir/src/GildedRose.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/15.2.0/bits/vector.tcc
+ C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
+ C:/mingw64/include/c++/15.2.0/algorithm \
+ C:/mingw64/include/c++/15.2.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
+ C:/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
+ C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h

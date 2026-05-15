@@ -25,11 +25,46 @@
 	ProcessorClockFrequency="3244.000000"
 	>
 	<Testing>
-		<StartDateTime>May 15 07:03 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</StartDateTime>
-		<StartTestTime>1778796239</StartTestTime>
-		<TestList/>
-		<EndDateTime>May 15 07:03 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</EndDateTime>
-		<EndTestTime>1778796239</EndTestTime>
+		<StartDateTime>May 15 10:58 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</StartDateTime>
+		<StartTestTime>1778810290</StartTestTime>
+		<TestList>
+			<Test>./GildedRoseApprovalTest.AllCasesTogether</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>GildedRoseApprovalTest.AllCasesTogether</Name>
+			<Path>.</Path>
+			<FullName>./GildedRoseApprovalTest.AllCasesTogether</FullName>
+			<FullCommandLine>C:\DEV\GlideRose_10\build\gilded_rose_approval_test.exe "--gtest_filter=GildedRoseApprovalTest.AllCasesTogether" "--gtest_also_run_disabled_tests"</FullCommandLine>
+			<StartTestTime>1778810290.361889</StartTestTime>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>Failed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.047157</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>C:\DEV\GlideRose_10\build\gilded_rose_approval_test.exe "--gtest_filter=GildedRoseApprovalTest.AllCasesTogether" "--gtest_also_run_disabled_tests"</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJy1Uk1rwkAQve+vGDxVrEGhlBLwEPwIhSJFbS9GyppMzdLNbtidaPvvu0mM1dKCFjqnZfbNe/NmZqoJfQi13kiEBVqCVyEJDQwgFDLBZKYtBnlu9JbL8t8LpBxyi3ahN0gpGrYcHGIFs0IpoTbQB6rIjM6aty0EoceW3UOsIJR6zWX9j2orjFYZKodF6hb5N/Ax58/NsSXMnqZQxepsA4V6U3qnSuduFhMuZGGQDTsdwPcYcxJawU5QCgna2Ig60SpxmEBD7QObYYxi63KJRgtKE2Sc4hR4BXH5L4QPraEfjcbPUShFgmWPL/1eFOd5VHqMjhu23plGPLOn9+idWsCCRvd/1BpblVoLKDXlEIVyL6w3tdbJh8fcUmAS3D+MRxcsBa76N5DZ9qUX4OpuXR2QJi7b7LxrI+Smm7juT2/5txsGw5XnhO6OhJzHx2A+rz32KrD1Tp3XFNcghSW3lDVKvfP/NBzGHNm+ajGeL9gnemRE2g==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>May 15 10:58 [NON-UTF-8-BYTE-0xB4][NON-UTF-8-BYTE-0xEB][NON-UTF-8-BYTE-0xC7]ѹα[NON-UTF-8-BYTE-0xB9] ǥ[NON-UTF-8-BYTE-0xC1]ؽ[NON-UTF-8-BYTE-0xC3]</EndDateTime>
+		<EndTestTime>1778810290</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

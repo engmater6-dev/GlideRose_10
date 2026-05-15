@@ -1,0 +1,14 @@
+GildedRose Cases
+
+
+[0] = NormalItem -> Name: foo, SellIn: -1, Quality: 0
+[1] = QualityDecreaseInSellIn -> Name: foo, SellIn: 1, Quality: 4
+[2] = QualityDecreaseAfterSellIn -> Name: foo, SellIn: -1, Quality: 4
+[3] = AgedBrieQualityIncreaseInSellIn -> Name: Aged Brie, SellIn: 1, Quality: 6
+[4] = BackstagePassesIncreaseMoreInSellIn -> Name: Backstage passes to a TAFKAL80ETC concert, SellIn: 1, Quality: 8
+[5] = SulfurasNoChangeQualityAndSellIn -> Name: Sulfuras, Hand of Ragnaros, SellIn: 1, Quality: 5
+[6] = AgedBrieQualityIncreaseAfterSellIn -> Name: Aged Brie, SellIn: -1, Quality: 6
+[7] = AgedBrieQualityUpperBound -> Name: Aged Brie, SellIn: 1, Quality: 50
+[8] = BackstagePassesIncreaseInSellIn -> Name: Backstage passes to a TAFKAL80ETC concert, SellIn: 5, Quality: 7
+[9] = BackstagePassesQualityDropAfterSellIn -> Name: Backstage passes to a TAFKAL80ETC concert, SellIn: -1, Quality: 8
+

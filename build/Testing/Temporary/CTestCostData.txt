@@ -27,3 +27,4 @@ GildedRoseApprovalTest.BackstagePassesIncreaseMoreInSellIn 0 0
 GildedRoseApprovalTest.SulfurasNoChangeQualityAndSellIn 0 0
 GildedRoseApprovalTest.AllCasesTogether 2 0.0285228
 ---
+GildedRoseApprovalTest.AllCasesTogether
