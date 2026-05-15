@@ -343,7 +343,26 @@ class GildedRoseItem(Define):
 
 8단계 Define class를 활용시 함수들 변경 ==> 중재자 문제????
 
-class BackStage(ItemUpdate, Define):
+
+# 부모 class
+class ItemUpdate(ABC, Define):
+    	def __init__(self, item):
+        	self.item = item
+
+	def update(self):
+		self.update_quality()
+		self.decrease_sellin()
+	
+	@abstractmethod
+	def update_quality(self):
+		pass
+
+	@abstractmethod
+	def decrease_sellin(self):
+		pass
+
+
+class BackStage(ItemUpdate):
 	def update_quality(self):
 		if self.item.sellin >= 11:
 			amount = 1
