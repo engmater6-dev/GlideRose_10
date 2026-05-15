@@ -258,18 +258,18 @@ class GildedRoseItem:
 				item_update = BackStage(item)
 			elif item.name == SULFURAS:
 				item_update = Sulfuras(item)
-      elif item.name == CONJURED:
-        item_update = Conjured(item)
-      elif item.name == FOOD_BEVERAGE:
-        item_update = FoodBeverage(item)
-      else:
-        item_update = Normal(item)
+      		elif item.name == CONJURED:
+        		item_update = Conjured(item)
+      		elif item.name == FOOD_BEVERAGE:
+        		item_update = FoodBeverage(item)
+      		else:
+        		item_update = Normal(item)
 			item_update.update()
 
 5단계 : item 추가
 ## 자식 class 추가
 class Conjured(ItemUpdate):
-  def update_quality(self):
+  	def update_quality(self):
 		decrease_quality(self.item, amount=2)
 
 	def decrease_sellin(self):
@@ -283,9 +283,10 @@ class FoodBeverage(ItemUpdate):
 		decrease_sellin(self.item)
 ```
 
-###GildedRoseItem Class if문 dict으로 변경
+
 ```python
 
+6단계  GildedRoseItem Class if문 dict으로 변경
 dict_item_class = { 
 		AGED_BRIE: AgedBrie,
 		BACKSTAGE: BackStage,
@@ -310,6 +311,7 @@ class GildedRoseItem:
 
 ### 상수 및 기본설정 class로 전환
 ``` python
+7단계 상수 및 기본설정 class로 전환
 class Define:
 	QUALITY_MIN = 0
 	QUALITY_MAX = 50
@@ -339,7 +341,31 @@ class GildedRoseItem(Define):
 			item_update = classItem(item)
 			item_update.update()
 
-## Define를 활용 다른 class도 변경
+8단계 Define class를 활용시 함수들 변경 ==> 중재자 문제????
+
+class BackStage(ItemUpdate, Define):
+	def update_quality(self):
+		if self.item.sellin >= 11:
+			amount = 1
+		elif self.item.sellin > 5:
+			amount = 2
+		else:
+			amount = 3
+		increase_quality(self.item, amount)
+
+		### sellin이 over시 0 조건 추가
+		if self.item.sellin < 0:
+			self.item.quality = self.QUALITY_MIN
+
+def increase_quality(item, amount=1):
+   	 item.quality = min(Define.QUALITY_MAX, item.quality + amount)
+
+def decrease_quality(item, amount=1):
+    	item.quality = max(Define.QUALITY_MIN, item.quality - amount)
+
+def decrease_sellin(item):
+	    item.sellin -= 1
+
 ## 전역함수도 Define으로 이동???
 
 ```
