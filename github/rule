@@ -1,0 +1,28 @@
+# Cursor AI Project Rules for Gilded Rose (Python)
+
+[TECH STACK]
+- Python 3.x
+- pytest + pytest-cov
+- coverage.py
+
+[ABSOLUTE RULES]
+- Item 클래스는 절대 수정 금지
+- quality 값은 0 ~ 50 범위 유지 (단, Sulfuras는 예외)
+- sellIn 값은 음수 허용
+
+[TESTING RULES]
+- 테스트 케이스는 Given-When-Then 패턴을 따른다
+- @pytest.mark.parametrize 적극 활용
+- 경계값 테스트 반드시 포함:
+  * quality = 0
+  * quality = 50
+  * sellIn = 0
+  * sellIn = -1
+
+[REFACTORING RULES]
+- 모든 리팩토링은 테스트가 Green 상태일 때만 진행
+- 매직 넘버는 상수화하여 가독성과 유지보수성 확보
+
+[PYTHON STYLE RULES]
+- type hint 사용 권장
+- dataclass 활용 가능 (Item 클래스 제외)

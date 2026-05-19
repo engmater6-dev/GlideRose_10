@@ -19,31 +19,38 @@ Gilded Rose 는 게임 "World of Warcraft"에 나오는 여관 이름입니다.
 ---------------------------------------------------------  
 ## 실습 목적 :  테스트 코드 작성을 통한 legacy code 이해
 
-### 프로젝트 구조 (C++)
+### 프로젝트 구조 (Python)
 
 ```
-cpp/
-├── CMakeLists.txt          # CMake 빌드 설정 (Google Test 자동 다운로드)
-├── include/
-│   ├── Item.h              # Item 클래스 (수정 불가)
-│   └── GildedRose.h        # GildedRose 클래스 헤더
-├── src/
-│   └── GildedRose.cpp      # updateQuality() 구현
-└── test/
-    └── GildedRoseTest.cpp  # Google Test 기반 테스트
+python/
+├── item.py                 # Item 클래스 (수정 불가)
+├── gilded_rose.py          # GildedRose 클래스 (update_quality() 구현)
+└── test_gilded_rose.py     # unittest 기반 테스트
 ```
 
-### 빌드 및 테스트 실행
+### 가상환경 설정 및 테스트 실행
 
 ```bash
-cd cpp
-cmake -B build
-cmake --build build
-ctest --test-dir build
+cd python
+
+# 가상환경 생성
+python -m venv venv
+
+# 가상환경 활성화 (Windows)
+venv\Scripts\activate
+
+# 가상환경 활성화 (macOS/Linux)
+source venv/bin/activate
+
+# 테스트 실행
+python -m unittest test_gilded_rose -v
+
+# 가상환경 비활성화
+deactivate
 ```
 
-### GildedRoseTest.cpp : failed test 수정
-- updateQuality() 의 test case를 추가 작성해 보세요.
+### test_gilded_rose.py : failed test 수정
+- update_quality() 의 test case를 추가 작성해 보세요.
 - unit test 내용 : 문서상에 나타난 동작들 확인
 
 ### unit test VS golden-master test 비교
