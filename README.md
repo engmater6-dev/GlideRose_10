@@ -47,3 +47,344 @@ ctest --test-dir build
 - unit test 내용 : 문서상에 나타난 동작들 확인
 
 ### unit test VS golden-master test 비교
+
+
+### To-Do list
+noname
+- item 이름 변경 없음...초기...
+  : ("foo", 0, 0) -> "foo" 검증
+- 유통기한 1감소.. + 퀄리티 1감소
+  : ("foo", 2, 5) -> (1, 4) 검증 완료
+- 유통기한 over시 퀄리티 2감소
+  : ("foo", 0, 5) -> (3) 검증 완료
+- 품질은 0이 최소
+  : ("foo", 2, 0) -> (0) 검증 완료
+
+
+AgedBrie
+- 퀄리티 1 증가
+  : ("AgedBrie", 2, 5) -> (6) 검증 완료
+- 유통기한 over시 +2
+  : ("AgedBrie", 0, 5) -> (7) 검증 완료
+- 퀄리티 max 50
+  : ("AgedBrie", 2, 50) -> (50) 검증 완료
+
+Backstage Pass
+- 10이하 -> +2
+  : ("Backstage passes to a TAFKAL80ETC concert", 6, 5) -> (7) 완료
+
+
+Sulfuras
+- No change
+  : ("Sulfuras", 1, 5) -> (1, 5) 완료
+
+
+#### AI 정리
+  일반 아이템
+
+이름 불변
+
+sellIn 하루마다 -1
+
+quality 하루마다 -1
+
+유통기한 지난 경우 quality -2
+
+quality는 최소 0
+
+quality는 최대 50
+
+Aged Brie
+
+하루마다 +1
+
+유통기한 지난 경우 +2
+
+sellIn 감소 확인
+
+quality 최대 50
+
+Backstage Pass
+
+11일 이상일 때 +1
+
+10일 이하일 때 +2
+
+5일 이하일 때 +3
+
+콘서트 날 지나면 quality = 0
+
+quality 최대 50
+
+Sulfuras
+
+sellIn, quality 모두 변화 없음
+
+##### 문제점..
+ - 숫자의 의미 quality 50, sellin 0
+ - 중첩 if 과다 -> class로 분리
+ - 중복 로직 : items[i].quality + 1, items[i].sellIn - 1 -> 함수화
+ - updateQuality() 모든 규칙 처리
+
+##### Refactoring To-Do list
+ - 상수로 정의 : 오타방지 및 의미 확인
+ 
+ - quality 증감 추출
+
+ - class로 중첩 if문 구현
+   -> Template Method 적용???
+  추상 class 설정
+    .updateSellin 함수와 updateQuality는 pass로 정의하고
+    .자식 class에서 조건별 설정...
+
+  item 이름으로 class 지정하고...
+   -> 초기값 update -> sellin -1 실행 -> 조건에 맞추어 quality update 진행
+
+
+#### 파이썬으로 우선 작성..
+```python
+1단계 상수 추출
+# 상수 의미 부여
+QUALITY_MIN = 0
+QUALITY_MAX = 50
+
+# Item 상수화
+
+AGED_BRIE   = "Aged Brie"
+BACKSTAGE   = "Backstage passes to a TAFKAL80ETC concert"
+SULFURAS    = "Sulfuras, Hand of Ragnaros"
+CONJURED    = "Conjured"
+FOOD_BEVERAGE       = "Food & Beverage"
+
+
+2단계 함수 추출
+# 함수 추출
+def increase_quality(item, amount=1):
+   	 item.quality = min(QUALITY_MAX, item.quality + amount)
+
+def decrease_quality(item, amount=1):
+    	item.quality = max(QUALITY_MIN, item.quality - amount)
+
+def decrease_sellin(item):
+	    item.sellin -= 1
+
+3단계 추상 클라스 작성
+
+from abc import ABC, abstractmethod
+# 부모 class
+class ItemUpdate(ABC):
+    	def __init__(self, item):
+        	self.item = item
+
+	def update(self):
+		self.update_quality()
+		self.decrease_sellin()
+	
+	@abstractmethod
+	def update_quality(self):
+		pass
+
+	@abstractmethod
+	def decrease_sellin(self):
+		pass
+
+## 자식 class
+class Normal(ItemUpdate):
+  def update_quality(self):
+  	amount = 1 if self.item.sellin > 0 else 2
+    decrease_quality(self.item, amount)
+  
+  def decrease_sellin(self):
+    decrease_sellin(self.item)
+
+class AgedBrie(ItemUpdate):
+	def update_quality(self):
+		amount = 1 if self.item.sellin > 0 else 2
+		increase_quality(self.item, amount)
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
+
+class BackStage(ItemUpdate):
+	def update_quality(self):
+		if self.item.sellin >= 11:
+			amount = 1
+		elif self.item.sellin > 5:
+			amount = 2
+		else:
+			amount = 3
+		increase_quality(self.item, amount)
+
+		### sellin이 over시 0 조건 추가
+		if self.item.sellin < 0:
+			self.item.quality = QUALITY_MIN
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
+
+class Sulfuras(ItemUpdate):
+	def update_quality(self):
+		pass
+
+	def decrease_sellin(self):
+		pass
+
+## update_quality 단순화..
+def update_quality(items):
+	for item in items:
+		if item.name == AGED_BRIE:
+			item_update = AgedBrie(item)
+		elif item.name == BACKSTAGE:
+			item_update = BackStage(item)
+		elif item.name == SULFURAS:
+			item_update = Sulfuras(item)
+    	else:
+      		item_update = Normal(item)
+		item_update.update()
+
+
+4단계 GildedRoseItem 추상클래스
+## update_quality 수정
+
+class GildedRoseItem:
+	def __init__(self, items):
+		self.items = items
+
+	def update_quality(self):
+		for item in self.items:
+			if item.name == AGED_BRIE:
+				item_update = AgedBrie(item)
+			elif item.name == BACKSTAGE:
+				item_update = BackStage(item)
+			elif item.name == SULFURAS:
+				item_update = Sulfuras(item)
+      		elif item.name == CONJURED:
+        		item_update = Conjured(item)
+      		elif item.name == FOOD_BEVERAGE:
+        		item_update = FoodBeverage(item)
+      		else:
+        		item_update = Normal(item)
+			item_update.update()
+
+5단계 : item 추가
+## 자식 class 추가
+class Conjured(ItemUpdate):
+  	def update_quality(self):
+		decrease_quality(self.item, amount=2)
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
+
+class FoodBeverage(ItemUpdate):
+  def update_quality(self):
+		decrease_quality(self.item)
+
+	def decrease_sellin(self):
+		decrease_sellin(self.item)
+```
+
+
+```python
+
+6단계  GildedRoseItem Class if문 dict으로 변경
+dict_item_class = { 
+		AGED_BRIE: AgedBrie,
+		BACKSTAGE: BackStage,
+		SULFURAS: Sulfuras,
+		CONJURED: Conjured,
+		FOOD_BEVERAGE: FoodBeverage,
+			}
+
+
+class GildedRoseItem:
+	
+	def __init__(self, items):
+		self.items = items
+	
+	def update_quality(self):
+		for item in self.items:
+			classItem = dict_item_class.get(item.name, Normal)
+			item_update = classItem(item)
+			item_update.update()
+
+```
+
+### 상수 및 기본설정 class로 전환
+``` python
+7단계 상수 및 기본설정 class로 전환
+class Define:
+	QUALITY_MIN = 0
+	QUALITY_MAX = 50
+
+	AGED_BRIE   = "Aged Brie"
+	BACKSTAGE   = "Backstage passes to a TAFKAL80ETC concert"
+	SULFURAS    = "Sulfuras, Hand of Ragnaros"
+	CONJURED    = "Conjured"
+	FOOD_BEVERAGE       = "Food & Beverage"
+
+	dict_item_class = { 
+		AGED_BRIE: AgedBrie,
+		BACKSTAGE: BackStage,
+		SULFURAS: Sulfuras,
+		CONJURED: Conjured,
+		FOOD_BEVERAGE: FoodBeverage,
+			}
+
+class GildedRoseItem(Define):
+	
+	def __init__(self, items):
+		self.items = items
+	
+	def update_quality(self):
+		for item in self.items:
+			classItem = self.dict_item_class.get(item.name, Normal)
+			item_update = classItem(item)
+			item_update.update()
+
+8단계 Define class를 활용시 함수들 변경 ==> 중재자 문제????
+
+
+# 부모 class
+class ItemUpdate(ABC, Define):
+    	def __init__(self, item):
+        	self.item = item
+
+	def update(self):
+		self.update_quality()
+		self.decrease_sellin()
+	
+	@abstractmethod
+	def update_quality(self):
+		pass
+
+	@abstractmethod
+	def decrease_sellin(self):
+		pass
+
+
+class BackStage(ItemUpdate):
+	def update_quality(self):
+		if self.item.sellin >= 11:
+			amount = 1
+		elif self.item.sellin > 5:
+			amount = 2
+		else:
+			amount = 3
+		increase_quality(self.item, amount)
+
+		### sellin이 over시 0 조건 추가
+		if self.item.sellin < 0:
+			self.item.quality = self.QUALITY_MIN
+
+def increase_quality(item, amount=1):
+   	 item.quality = min(Define.QUALITY_MAX, item.quality + amount)
+
+def decrease_quality(item, amount=1):
+    	item.quality = max(Define.QUALITY_MIN, item.quality - amount)
+
+def decrease_sellin(item):
+	    item.sellin -= 1
+
+## 전역함수도 Define으로 이동???
+
+```

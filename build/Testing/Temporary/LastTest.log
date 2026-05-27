@@ -1,0 +1,29 @@
+Start testing: May 14 13:56 대한민국 표준시
+----------------------------------------------------------
+1/1 Testing: GildedRoseApprovalTest.AllCasesTogether
+1/1 Test: GildedRoseApprovalTest.AllCasesTogether
+Command: "C:/DEV/GlideRose_10/build/gilded_rose_approval_test.exe" "--gtest_filter=GildedRoseApprovalTest.AllCasesTogether" "--gtest_also_run_disabled_tests"
+Directory: C:/DEV/GlideRose_10/build
+"GildedRoseApprovalTest.AllCasesTogether" start time: May 14 13:56 대한민국 표준시
+Output:
+----------------------------------------------------------
+Note: Google Test filter = GildedRoseApprovalTest.AllCasesTogether
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from GildedRoseApprovalTest
+[ RUN      ] GildedRoseApprovalTest.AllCasesTogether
+[       OK ] GildedRoseApprovalTest.AllCasesTogether (3 ms)
+[----------] 1 test from GildedRoseApprovalTest (3 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"GildedRoseApprovalTest.AllCasesTogether" end time: May 14 13:56 대한민국 표준시
+"GildedRoseApprovalTest.AllCasesTogether" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 14 13:56 대한민국 표준시

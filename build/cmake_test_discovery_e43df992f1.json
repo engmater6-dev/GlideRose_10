@@ -1,0 +1,17 @@
+{
+  "tests": 1,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "GildedRoseApprovalTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "AllCasesTogether",
+          "file": "C:\\DEV\\GlideRose_10\\cpp\\test\\ApprovalTests.cpp",
+          "line": 11
+        }
+      ]
+    }
+  ]
+}
